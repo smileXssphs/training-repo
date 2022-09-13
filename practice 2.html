@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .element {
+            height: 150px;
+            border: solid black;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+        .fst_img {
+            width: 100px;
+            background-color: aqua;
+        }
+
+        .snd_img {
+            width: 250px;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lion_d%27Afrique.jpg/1200px-Lion_d%27Afrique.jpg);
+            background-size: cover;
+
+        }
+
+        .trd_img {
+            width: 180px;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Plains_Zebra_Equus_quagga.jpg/266px-Plains_Zebra_Equus_quagga.jpg);
+            background-position: 0px -80px;
+        }
+
+        .foth_img {
+            width: 70px;
+            background-image: url(https://ichef.bbci.co.uk/news/976/cpsprodpb/1486F/production/_105597048_snakes8.jpg);
+        }
+
+        .parent {
+            display: flex;
+            width: 700px;
+            height: 100px;
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="parent">
+            <div class="element fst_img"></div>
+            <div class="element snd_img"></div>
+        </div>
+        <div class="parent">
+            <div class="element trd_img"></div>
+            <div class="element foth_img"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
