@@ -1,0 +1,38 @@
+#container {
+    position: relative;
+    width: 80%;
+    height: 700px;
+    margin: 0 auto
+}
+
+.element {
+    width: 100%;
+    height: 150px;
+    border: 2px solid aqua;
+}
+
+.fst {
+    background-color: blue;
+}
+
+.snd {
+    background-color: yellow;
+}
+
+.trd {
+    background-color: red;
+
+
+}
+
+.foth {
+    background-color: green;
+}
+
+.fith {
+    background-color: purple;
+}
+
+p {
+    background-color: blue;
+}

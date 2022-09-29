@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2+p {
+            color: blue;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 20%;
+        }
+
+        .element {
+            border: solid 2px black;
+            width: 100px;
+            height: 100px;
+        }
+
+        .fst {
+            color: brown border-radius: 5px;
+        }
+
+        .fst::first-letter {
+            font-size: 200%;
+            background-color: blueviolet;
+        }
+
+        .snd {
+            transform: skew(30deg, 20deg);
+        }
+
+        .snd::first-line {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .trd {
+            transform: scale(0.5) translate(50%, 50%);
+        }
+
+        .trd::before {
+            content: "sadfghjklewsdfghjklesdfghjkasdfghjklsadfghjklsdfghjk";
+        }
+
+        .trd::after {
+            content: "ah shiiiiiiiiiiiiit";
+            font-size: 300%;
+        }
+
+        .foth {
+            transform: matrix(1, 2, 3, 4, 5, 6);
+        }
+
+        .foth::selection {
+            color: blue;
+        }
+
+        .fith {
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        }
+
+        .sith {
+            transform: scale3d(2.5, 1.2, 0.3);
+        }
+
+        .fst.trd.fith {
+            border-color: blue;
+        }
+
+        p[style] {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="element fst"></div>
+        <div class="element snd"></div>
+        <div class="element trd"></div>
+        <div class="element foth"></div>
+        <div class="element fith"></div>
+        <div class="element sith"></div>
+        <div class="element fst trd fith"></div>
+        <p class="fst">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis totam atque accusantium
+            voluptas,
+            perferendis hic optio maxime natus dolorem amet provident repellendus similique deserunt doloribus, ut
+            cumque quasi! Eaque, quibusdam?</p>
+        <p class="snd" style="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quasi cumque possimus,
+            odit, earum
+            ipsam ducimus inventore, nesciunt voluptate quidem maxime! Officia ratione blanditiis adipisci, eos in
+            earum! At, adipisci.</p>
+        <p class="trd">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, porro dolor obcaecati commodi amet
+            accusamus earum est possimus unde minus distinctio, perspiciatis dolorum incidunt. Unde nam quisquam
+            pariatur voluptate earum!</p>
+        <p class="foth">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, maxime similique ipsa odit
+            qui et ducimus tempora sint optio corrupti aspernatur eaque voluptatem asperiores corporis labore dolorum
+            inventore blanditiis nesciunt!</p>
+    </div>
+    <section>
+        <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aliquam nesciunt ad? Velit illo fuga
+                commodi minus odio nesciunt voluptatum ullam necessitatibus nam mollitia assumenda nisi, quia aspernatur
+                totam soluta.</span><span>Rerum vel autem distinctio atque magni voluptate cumque doloribus veritatis
+                illo quas! Ipsum corrupti tenetur modi, minus nesciunt aspernatur tempore tempora quas! Alias delectus
+                atque dolorem numquam ducimus odio eveniet.</span><span>Quo autem ullam ratione adipisci, sed veritatis
+                nobis magni ipsam similique rem minus, officiis a officia quam praesentium nostrum aliquid possimus et
+                architecto aut accusamus assumenda est fuga? Dolorum, obcaecati.</span><span>Eveniet amet enim veniam
+                explicabo asperiores animi aliquam debitis nesciunt dolorem repellendus sapiente eum, consectetur hic
+                quidem ducimus dolor illum, vitae libero adipisci exercitationem delectus modi! Quisquam neque mollitia
+                ab?</span><span>Ea, enim libero ullam repellat fugiat maiores, quia aliquam aspernatur dolor excepturi
+                ducimus totam velit rerum quidem at. Corporis fuga iusto ducimus deserunt optio inventore facere,
+                laborum cum debitis magnam.</span><span>Maiores, ratione. Maxime consequatur pariatur expedita itaque,
+                repellendus, error officiis tenetur nihil quae, accusantium eveniet soluta consectetur. Enim dolore,
+                obcaecati id optio quam sed iste reiciendis incidunt, quasi quod earum.</span><span>Saepe ipsa nesciunt
+                esse asperiores quia incidunt maiores aspernatur molestiae at? Recusandae dicta magnam quod quam fugiat,
+                odio veniam! Dolore voluptates porro necessitatibus impedit corporis nemo expedita, modi cum
+                optio?</span><span>Praesentium, necessitatibus reiciendis? Numquam, dignissimos dolorum porro aut
+                eveniet at maxime deserunt, soluta repellendus molestias beatae nobis harum ratione earum pariatur
+                quidem ducimus natus. A quis aperiam repellendus mollitia exercitationem?</span><span>Esse enim aliquam,
+                quos eligendi consequatur iste neque et expedita blanditiis provident ab dolorem molestias alias ducimus
+                repudiandae voluptatem. Atque ipsa consequatur sapiente! Officiis, quisquam dolore. Quidem nobis ad
+                placeat.</span><span>Ratione tenetur eveniet vero expedita, tempora consequatur ea consectetur iusto
+                explicabo aliquid similique soluta aperiam. Et, nobis maiores cupiditate temporibus eum minima quisquam.
+                Recusandae optio illo provident autem quidem. Expedita!</span><span>Fugit, molestiae aut, temporibus sit
+                expedita rerum placeat illum et porro pariatur veniam error officiis aliquam rem sed dolor. Rerum harum
+                minima veniam animi excepturi quod qui illum vero nulla?</span><span>Et, odio? Facere cumque nemo eaque
+                iste, ratione, expedita hic atque vel, reiciendis cupiditate voluptatem. Iure, consequatur voluptatum.
+                Eum quam totam doloribus illum ea tempora quo fugit officia reiciendis. Laboriosam.</span><span>Maiores
+                fuga illo quas obcaecati sequi ea id. Suscipit blanditiis itaque distinctio minus, ad explicabo possimus
+                omnis vitae impedit in? Officia unde ad commodi vero in doloremque voluptatibus repellendus
+                ut.</span><span>Dolorem ullam minima odit sit id eum delectus expedita, fugit placeat debitis illum nemo
+                iure sunt corrupti, ut eos enim tenetur cumque magnam, dignissimos nam. Libero, amet vero. Fugiat,
+                ducimus?</span><span>Molestiae repellat debitis excepturi atque modi rem minus neque error recusandae,
+                dignissimos hic, fugiat laudantium assumenda commodi asperiores. Soluta, impedit! Natus possimus
+                quisquam molestiae dignissimos. Reiciendis nostrum aut sunt tenetur.</span><span>Dolorem, possimus
+                officia beatae ullam reiciendis minima enim quasi distinctio, cumque eaque veniam nam. Natus hic quaerat
+                velit distinctio repudiandae soluta expedita minus qui aut quasi, perferendis voluptatum repellendus
+                necessitatibus?</span><span>Soluta velit sed a, libero, alias aliquam, esse maxime natus expedita quidem
+                vitae cupiditate temporibus! Perspiciatis molestiae nihil ad laborum. Eum repellendus eveniet non in
+                cupiditate eaque adipisci facilis quidem!</span><span>Dolore a libero rerum, quisquam, ab hic doloribus
+                laborum id quae dolorem eaque fugit et? Dicta perspiciatis est hic quaerat eaque, dolorum vel soluta
+                cumque eveniet animi officia, quasi quod.</span><span>In excepturi cupiditate mollitia autem deleniti
+                assumenda impedit unde eum velit quidem adipisci doloremque natus atque officiis, amet officia, ipsa
+                aliquam sed, repudiandae nobis nihil eius. Harum ratione quia maiores?</span><span>Architecto, quisquam
+                aliquid? Error consequuntur cumque porro quae repudiandae ad culpa a perspiciatis temporibus ducimus
+                rerum, minus aut facere expedita fugiat obcaecati. Quasi harum, atque labore perferendis possimus itaque
+                voluptates!</span></p>
+    </section>
+    <style>
+        .forest {
+            height: 500px;
+            background-image: url('https://www.anekdot.ru/i/caricatures/normal/20/2/3/les-chudes-_43189.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+    <div class="forest"></div>
+
+</body>
+
+</html>
