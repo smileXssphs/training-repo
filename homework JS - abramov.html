@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display {
+            width: 80%;
+            height: 100px;
+            border: solid black 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Домашнее задание</h1>
+    <div id="display"></div>
+    <p>При нажатии кнопки Task-1 вывести на html страницу в div c классом "container-1" значение сохраненное под ключом
+        two из массива a1.</p>
+    <button onclick="task_1()">Task 1</button>
+
+    <p>При нажатии на кнопку Task-2 вывести на html страницу в div c классом "container-2" значение hi из массива a2.
+    </p>
+    <button onclick="task_2()">Task 2</button>
+
+    <p>При нажатии кнопки Task-3 вывести на html страницу в div c классом "container-3" объект a2. Формат вывода - ключ,
+        пробел, значение, перенос строки +'' br>'.</p>
+    <button onclick="task_3()">Task 3</button>
+
+    <p>Добавьте 2 input на html страницу. При нажатии кнопки с классом Task-4 вы должны получать из первого input ключ,
+        а из второго input значение и добавлять его в массив a2. После этого, вы должны вывести вывести на html страницу
+        в div c классом "container-4" объект a2. Формат вывода как и впредыдущем задании - ключ, пробел, значение,
+        перенос строки +'' br>'.</p>
+    <input id="input_1" type="text">
+    <input id="input_2" type="text">
+    <button onclick="task_4()">Task 4</button>
+    <script>
+
+
+
+        function task_1() {
+            let a1 = { "one": 15, "two": 16, "five": 20 };
+            display.innerHTML = a1['two']
+        }
+
+        function task_2() {
+            let a2 = { "one": "hello", "two": "mahai", "five": "hi" };
+            display.innerHTML = a2['five']
+        }
+        function task_3() {
+            let a2 = { "one": "hello", "two": "mahai", "five": "hi" };
+            display.innerHTML = ''
+            Object.keys(a2).forEach(e => display.innerHTML += `ключ = ${e},  значение = ${a2[e]}; <br>`)
+        };
+        function task_4() {
+            let a2 = { "one": "hello", "two": "mahai", "five": "hi" };
+            key = document.getElementById("input_1").value
+            val = document.getElementById("input_2").value
+            let a2.${ "key"} = ${ "val"}
+            Object.keys(a2).forEach(e => display.innerHTML += `ключ = ${e},  значение = ${a2[e]}; <br>`)
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100px;
+            height: 100px;
+            border: solid 2px black;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="alert('haha')">click me</button>
+
+    <button ondblclick="alert('haha')">click me</button>
+
+    <button oncontextmenu="alert('haha')">click me</button>
+
+    <div class="container" onclick="alert('div')" id="divcolor" onmouseover="changecolor1()"
+        onmouseout="changecolor2()"></div>
+    <input type="text" onfocus="console.log('focus')">
+
+
+    <script>
+        function changecolor1() {
+            divcolor.style.background = 'yellow'
+        }
+        function changecolor2() {
+            divcolor.style.background = 'white'
+        }
+        function 
+    </script>
+
+</html>

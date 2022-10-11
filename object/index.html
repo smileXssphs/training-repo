@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script>
+        let objCat = {
+            cat: 'tom',
+            age: '4',
+            color: 'white',
+            breed: 'persian',
+            5: 'angry',
+        };
+        // console.log(objCat['name']);
+        console.log(objCat.name);
+        container.innerHTML = objCat.cat;
+
+        delete objCat.breed;
+        objCat.weight = 'too much';
+
+        console.log(objCat.keys);
+        console.log(objCat.values);
+        console.log(objCat.entries);
+
+
+
+
+    </script>
+</body>
+
+</html>
