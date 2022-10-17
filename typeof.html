@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="fst" type="text">
+    <input id="snd" type="text">
+    <button id="doit"></button>
+    <script>
+        doit.onclick = () => {
+            let input1 = fst.value
+            let input2 = snd.value
+
+            console.log(typeof String(input1), typeof Number(input2))
+        }
+    </script>
+
+</body>
+
+</html>

@@ -56,11 +56,11 @@
             Object.keys(a2).forEach(e => display.innerHTML += `ключ = ${e},  значение = ${a2[e]}; <br>`)
         };
         function task_4() {
-            let a2 = { "one": "hello", "two": "mahai", "five": "hi" };
+            let a4 = { "one": "hello", "two": "mahai", "five": "hi" };
             key = document.getElementById("input_1").value
             val = document.getElementById("input_2").value
-            let a2.${ "key"} = ${ "val"}
-            Object.keys(a2).forEach(e => display.innerHTML += `ключ = ${e},  значение = ${a2[e]}; <br>`)
+            a4.key = val
+            Object.keys(a4).forEach(e => display.innerHTML += `ключ = ${e},  значение = ${a4[e]}; <br>`)
         }
 
 

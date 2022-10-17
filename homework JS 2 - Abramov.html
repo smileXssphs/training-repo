@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            width: 80%;
+            height: fit-content;
+            margin: 0 auto;
+            background-color: orange;
+            border-radius: 10px;
+            border: 5px dotted brown;
+            -webkit-text-fill-color: rgb(71, 69, 66);
+            text-shadow: #FC0 1px 0 10px;
+            font-size: 2em;
+            text-align: center;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Домашнее задание</h1>
+    <h2>Задание 1 - таблица умножения на 7</h2>
+    <div id="task_1"></div>
+
+    <h2>Задание 2 - Меню ресторана</h2>
+    <div id="menu">
+        <h2>Меню</h2>
+    </div>
+
+    <script>
+        for (let i = 0; i < 10; i++) {
+            let result = 7 * i
+            task_1.innerHTML += `${i} * 7 = ${result} <br>`
+        }
+        let currentMenu = [
+            { name: 'Бутерброд', price: '50' },
+            { name: 'Суп дня', price: '100' },
+            { name: 'Суп на выбор', price: '150' },
+            { name: 'Макарошки', price: '50' },
+            { name: 'Пюрешка', price: '50' },
+            { name: 'Котлетки', price: '150' },
+            { name: 'Курочка', price: '150' },
+            { name: 'Чай', price: '50' },
+            { name: 'Компот', price: '50' },
+        ]
+        for (i = 0; i < 9; i++) {
+            menu.innerHTML += `${currentMenu[i].name} -------${currentMenu[i].price} рублей <br>`
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
