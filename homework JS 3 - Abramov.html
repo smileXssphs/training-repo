@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Домашнее задание</h1>
+    <h2>Задание 1 - проверка возраста</h2>
+    <h3>Вам исполнилось 18 лет?</h3>
+    <button id="answer" onclick="task_1()">Проверка возраста</button>
+
+    <h2>Задание 2 - переписать выражение на switch</h2>
+    <button onclick="task_2()">проверить программу</button>
+
+    <h2>Задание 3 - Спросить у пользователя пол</h2>
+    <h4>Пожалуйста, запишите в поле ввода свой пол</h4>
+    <input id="task_3" type="text" style="width:300px ;" placeholder="М - если мужчина/ F - если женщина">
+    <h4>Поле для вывода значения переменной Gender</h4>
+    <button id="start_task_3" onclick="task_3()">Проверка</button>
+    <div id="check" style="height:50px ; width:50px; border: 2px solid black"></div>
+
+
+
+
+
+
+    <script>
+        function task_1() {
+            let age = prompt('Сколько вам лет ?')
+            age > 17 ?
+                alert('access granted') :
+                alert('access denied');
+        }
+        function task_2() {
+            let id = prompt('введите ID товара:');
+            switch (id) {
+                case '1':
+                    alert("В наличии 10шт");
+                    break;
+                case '2':
+                    alert("В наличии 256шт");
+                    break;
+                case '3':
+                    alert("В наличии 53шт");
+                    break;
+                case '4':
+                    alert("В наличии 3шт");
+                    break;
+                default:
+                    alert('нет в наличии')
+                    break;
+            }
+        }
+        function task_3() {
+            let res_3 = document.getElementById("task_3").value
+            if (res_3 === 'M' || res_3 === 'М') {
+                var gender = 'Male';
+            } else if (res_3 === 'F') {
+                var gender = 'Female';
+            } else {
+                var gender = 'N/A';
+            }
+            check.innerHTML = gender
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="result"></div>
+<script>
+    console.log(25 == '25')
+    console.log(25 === '25') // строгое равенство. лучше всегда использовать его
+    console.log(25 !== '25')
+    console.log(0 == '')
+    console.log((25 == '25') && (25 == '25')) //конъюнкция - И
+    console.log((25 == '25') || (25 == '25')) //дизъюнкция - ИЛИ
+    console.log(!true) //инверсия - НЕ
+    if (condition) { //условный оператор
+        action
+    } else if {
+        other action; //условный оператор можно стакать
+    } else if {
+        other action;
+    } else {other action;
+    }
+    let num = 3;
+    if (num > 0) {
+        let a = 2  //тут переменная видна только внутри тела условного оператора, 
+        //так ка она обьявлена LET, а не VAR
+        console.log(a)
+    }
+    console.log(a)
+
+    switch (num) { //эквивалент else if
+        case '1':
+            break;
+        case '2':
+            break;
+        default:
+            break;
+    }
+
+</script>
+
+<body>
+
+</body>
+
+</html>
