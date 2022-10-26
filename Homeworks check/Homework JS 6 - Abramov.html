@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let addPerson = (name, age, sex) => {
+            let Person = {};
+            Person.name = name;
+            Person.age = age;
+            Person.sex = sex;
+
+            Person.setNewAge = function setNewAge(NewAge) {
+                this.age = NewAge;
+            }
+            Person.getYearsBeforePension = function getYearsBeforePension() {
+                if (this.sex === 'male') {
+                    return (`Этому человеку осталось ${60 - this.age} лет до выхода на пенсию`);
+                }
+                else if (this.sex === 'female') {
+                    return (`Этому человеку осталось ${55 - this.age} лет до выхода на пенсию`);
+                }
+            }
+            return Person
+        }
+        let person1 = addPerson('Natasha', 25, 'female')
+        let person2 = addPerson('Ivan', 35, 'male')
+
+        console.log(person1.age);
+        person1.setNewAge(30);
+        console.log(person1.age);
+
+        console.log(person2.getYearsBeforePension());
+
+    </script>
+
+</body>
+
+</html>
