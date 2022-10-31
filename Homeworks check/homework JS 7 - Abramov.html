@@ -25,7 +25,7 @@
         }
         document.getElementById('getAddr').onclick = (lat, long) => {
             var addrRequest = new XMLHttpRequest();
-            addrRequest.open('get', `https://geocode-maps.yandex.ru/1.x/?apikey=818e46a3-7df1-4191-8ebb-9427f5f4d2db&geocode=${lat},${long}&format=json`, true);
+            addrRequest.open('get', `https://geocode-maps.yandex.ru/1.x/?apikey=818e46a3-7df1-4191-8ebb-9427f5f4d2db&geocode=${lat},${long}&format=json`, false);
             // addrRequest.open('get', 'https://geocode-maps.yandex.ru/1.x/?apikey=818e46a3-7df1-4191-8ebb-9427f5f4d2db&geocode=55.7327582,37.677677&format=json', false);
             addrRequest.send();
             var data = JSON.parse(addrRequest.responseText);
