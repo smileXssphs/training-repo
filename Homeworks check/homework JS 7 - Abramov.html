@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Домашнее задание - отправка запроса на <em>Яндекс Геокодер</em></h1>
+    <button id="getCoord">Мои координаты - получить</button>
+    <div id="showCoord" style="height: fit-content; width: fit-content; border: solid black 2px"></div>
+    <button id="getAddr">Мой адрес - получить</button>
+    <div id="showAddr" style="height: fit-content; width: fit-content; border: solid black 2px"></div>
+
+    <script>
+        document.getElementById('getCoord').onclick = () => {
+            navigator.geolocation.getCurrentPosition(async (geolocation) => {
+                const lat = geolocation.coords.latitude
+                const long = geolocation.coords.longitude
+                showCoord.innerHTML = `широта = ${lat}, долгота = ${long}`
+            })
+        }
+        document.getElementById('getAddr').onclick = (lat, long) => {
+            var addrRequest = new XMLHttpRequest();
+            addrRequest.open('get', `https://geocode-maps.yandex.ru/1.x/?apikey=818e46a3-7df1-4191-8ebb-9427f5f4d2db&geocode=${lat},${long}&format=json`, true);
+            // addrRequest.open('get', 'https://geocode-maps.yandex.ru/1.x/?apikey=818e46a3-7df1-4191-8ebb-9427f5f4d2db&geocode=55.7327582,37.677677&format=json', false);
+            addrRequest.send();
+            var data = JSON.parse(addrRequest.responseText);
+            // console.log(addrRequest.responseText)
+            // console.log(data)
+            showAddr.innerHTML = data;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
