@@ -21,17 +21,18 @@
                 const lat = geolocation.coords.latitude
                 const long = geolocation.coords.longitude
                 showCoord.innerHTML = `широта = ${lat}, долгота = ${long}`
+                return lat, long
             })
         }
         document.getElementById('getAddr').onclick = (lat, long) => {
             var addrRequest = new XMLHttpRequest();
-            addrRequest.open('get', `https://geocode-maps.yandex.ru/1.x/?apikey=818e46a3-7df1-4191-8ebb-9427f5f4d2db&geocode=${lat},${long}&format=json`, false);
-            // addrRequest.open('get', 'https://geocode-maps.yandex.ru/1.x/?apikey=818e46a3-7df1-4191-8ebb-9427f5f4d2db&geocode=55.7327582,37.677677&format=json', false);
+            // addrRequest.open('get', `https://geocode-maps.yandex.ru/1.x/?apikey=818e46a3-7df1-4191-8ebb-9427f5f4d2db&geocode=${lat},${long}&sco=latlong&format=json&results=1`, false);
+            addrRequest.open('get', 'https://geocode-maps.yandex.ru/1.x/?apikey=818e46a3-7df1-4191-8ebb-9427f5f4d2db&geocode=55.7327582,37.677677&sco=latlong&format=json&results=1', false);
             addrRequest.send();
+
+            console.log(addrRequest.responseText)
             var data = JSON.parse(addrRequest.responseText);
-            // console.log(addrRequest.responseText)
-            // console.log(data)
-            showAddr.innerHTML = data;
+            showAddr.innerHTML = data.response.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.text;
         }
 
 
