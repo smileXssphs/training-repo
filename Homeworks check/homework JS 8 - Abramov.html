@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function task_1() {
+            var request = new XMLHttpRequest();
+            request.open('get', 'https://jsonplaceholder.typicode.com/posts', false);
+            request.send();
+            var result_1 = JSON.parse(request.responseText);
+            return result_1
+        }
+        async function task_2() {
+            let response = await fetch('https://jsonplaceholder.typicode.com/comments');
+            if (response.ok) {
+                let result_2 = await response.json();
+                return result_2
+            } else {
+                alert('Ошибка HTTP:' + response.status);
+            }
+        }
+        function task_3() {
+            fetch('https://jsonplaceholder.typicode.com/albums')
+                .then(result_3 => result_3.json())
+            return result_3
+        }
+        async function task_4() {
+            const request = await fetch('https://jsonplaceholder.typicode.com/photos',
+                {
+                    headers: { 'Content-Type': 'application/json', }, method: 'Get',
+                });
+            const result_4 = await request.json();
+            return (result_4)
+        }
+
+        // let res_1 = task_1()
+        // console.log(res_1)
+
+        // let res_2 = task_2()
+        // console.log(res_2)
+
+        // let res_3 = task_3()
+        // console.log(res_3)
+
+        // let res_4 = task_4()
+        // console.log(res_4)
+
+
+
+    </script>
+
+</body>
+
+</html>
