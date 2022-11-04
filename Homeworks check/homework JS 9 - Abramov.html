@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ios-like Stopwatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            font-family: 'Roboto', sans-serif;
+            background-image: url(https://9to5mac.com/wp-content/uploads/sites/6/2022/01/iphone-14-in-hand.jpg?quality=82&strip=all);
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: 250vh;
+        }
+
+        .screen {
+            position: absolute;
+            top: 5.8vh;
+            height: 85.3vh;
+            width: 39vh;
+            background-color: white;
+            margin: 0 auto;
+            border-radius: 4.8vh;
+        }
+
+        .statusBar {
+            height: 4vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .appName {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5vh;
+        }
+
+        h1 {
+            font-size: 2.3vh;
+        }
+
+        h4 {
+            font-size: 1.8vh;
+            margin: 0 auto;
+        }
+
+        #timeDisplay {
+            border-top: solid rgb(173, 169, 169) 0.5px;
+            border-bottom: solid rgb(173, 169, 169) 0.5px;
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8vh;
+            font-weight: lighter;
+        }
+
+        .buttonBox {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(234, 234, 237);
+            height: 15vh;
+        }
+
+        .timerButtons {
+            background-color: white;
+            border-radius: 100%;
+            border: solid 1px white;
+            height: 9vh;
+            aspect-ratio: 1 / 1;
+            font-size: 2.3vh;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        .StartActivated {
+            background-color: gray;
+            color: white;
+        }
+
+        .StartDisabled {
+            color: green;
+        }
+
+        #Pause {
+            background-color: rgba(255, 255, 255, 0);
+            border: none;
+        }
+
+        .pauseDisabled {
+            position: absolute;
+            top: 80vh;
+            left: 50vh;
+
+        }
+
+        .pauseActivated {
+            position: absolute;
+            top: 32.5vh;
+            left: 25vh;
+        }
+
+        .lapList {
+            background-color: rgb(234, 234, 237);
+            ;
+            height: 41.3vh;
+            border-bottom-left-radius: 4.8vh;
+            border-bottom-right-radius: 4.8vh;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="screen">
+
+        <div class="statusBar">
+            <h4 id="clock"></h4>
+        </div>
+        <div class="appName">
+            <h1>Stopwatch</h1>
+        </div>
+
+        <div id="timeDisplay"></div>
+
+        <div class="buttonBox">
+            <button class="timerButtons" id="Reset">Reset</button>
+            <button class="timerButtons StartDisabled" id="Start">Start</button>
+            <button id="Pause" class="timerButtons pauseDisabled"></button>
+        </div>
+
+        <div class="lapList">
+        </div>
+    </div>
+
+
+    <script>
+        let currentTime = new Date();
+        function TimeRefresh() {
+            clock.innerHTML = currentTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+        }
+        let timeRefresh = (TimeRefresh(), 3000);
+
+        var mins = 0;
+        var secs = 0;
+        var msecs = 0;
+        var running = false;
+
+        timeDisplay.innerHTML = `00:00:00`;
+        //---------------------------------------------------
+        function timerMechanism() {
+            running = true
+            msecs += 1;        // счётчики времени
+            if (msecs === 99) {
+                msecs = 0;
+                secs += 1;
+            }
+            if (secs === 60) {
+                secs = 0;
+                mins += 1;
+            }
+            if (mins === 99) {
+                mins = 0
+                secs = 0
+                msecs = 0
+            }
+
+            let proxyMins = 0; // Переменные для отображения времени - прокси
+            // создал для того, чтобы всегда выводить единицы времени в духзначном формате
+            let proxySecs = 0;
+            let proxyMsecs = 0;
+            if (mins < 10) {
+                proxyMins = '0' + mins
+            } else { proxyMins = mins }
+            if (secs < 10) {
+                proxySecs = '0' + secs
+            } else proxySecs = secs
+            if (msecs < 10) {
+                proxyMsecs = '0' + msecs
+            } else proxyMsecs = msecs
+
+
+            document.getElementById('timeDisplay').innerHTML = `${proxyMins}:${proxySecs}:${proxyMsecs}`;
+
+            function changeButton(running) {
+                document.getElementById('Start').classList.remove('StartDisabled')
+                document.getElementById('Start').classList.add('StartActivated')
+                document.getElementById('Start').innerHTML = 'Pause'
+                document.getElementById('Pause').classList.remove('pauseDisabled')
+                document.getElementById('Pause').classList.add('pauseActivated')
+            }
+
+            if (running === true) {
+                changeButton()
+            }
+        }
+        //-------------------------------------------
+        function startTimer() {
+            let start = setInterval(timerMechanism, 10);
+
+            function changeButtonBack() {
+                document.getElementById('Start').classList.remove('StartActivated')
+                document.getElementById('Start').classList.add('StartDisabled')
+                document.getElementById('Start').innerHTML = 'Start'
+                document.getElementById('Pause').classList.add('pauseDisabled')
+                document.getElementById('Pause').classList.remove('pauseActivated')
+            }
+            function resetTimer() {     //вложенная функция - обнуление таймера
+                clearInterval(start);
+                mins = 0;
+                secs = 0;
+                msecs = 0;
+                running = false;
+                document.getElementById('timeDisplay').innerHTML = `00:00:00`;
+                changeButtonBack()
+            }
+            function pauseTimer() {
+                clearInterval(start);
+                changeButtonBack()
+            }
+
+            document.getElementById('Reset').onclick = resetTimer
+            document.getElementById('Pause').onclick = pauseTimer
+        }
+
+        document.getElementById('Start').onclick = startTimer
+
+
+    </script>
+</body>
+
+
+
+</html>
