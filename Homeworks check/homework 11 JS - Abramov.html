@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            direction: row;
+        }
+
+        .square {
+            height: 100px;
+            aspect-ratio: 1/1;
+            margin: 10px;
+            border: solid black 1px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+<div id="container"></div>
+
+<script>
+    let parent = document.getElementById('container')
+    function createSquare(number) {
+        for (let i = 1; i < (number + 1); i++) {
+            let square = document.createElement('div')
+            square.classList.add('square')
+            square.classList.add('green')
+            parent.appendChild(square)
+        }
+    }
+    createSquare(6)
+
+    let squares = container.children
+
+    function changeColor(element) {
+        if (element.classList.contains('green')) {
+            element.classList.replace('green', 'red')
+        } else {
+            if (element.classList.contains('red')) {
+                element.classList.replace('red', 'green')
+            }
+        }
+    }
+    function changeColorAround(element) {
+        changeColor(element.previousElementSibling)
+        changeColor(element.nextElementSibling)
+    }
+
+    // for (let j = 0; j < squares.length, j++) {
+    //     squares.item(j).onclick(changeColorAround(squares.item(j)))
+    // }
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>
