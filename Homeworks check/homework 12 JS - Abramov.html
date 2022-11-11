@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База сотрудников компании</title>
+    <style>
+        .inputField {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>База сотрудников компании</h1>
+    <!-- <h2>Пожалуйста, введите данные нового сотрудника, чтобы добавить в базу</h2>
+    <div class="inputField">
+        <input type="text" id="fstNameInput" placeholder="Имя сотрудника">
+        <input type="text" id="lstNameInput" placeholder="Фамилия сотрудника">
+        <input type="number" id="ageInput" placeholder="Возраст">
+        <input type="text" id="departmentInput" placeholder="Отдел">
+        <input type="text" id="salaryInput" placeholder="Заработная плата">
+    </div><br>
+    <button id="addPerson">Добавить сотрудника в базу</button> -->
+
+    <button id="Birthday" onclick="user1.celebrateBirthday()">Отпраздновать</button>
+    <script>
+        class Person {
+            constructor(fstName, lstName, age, department, salary) {
+                this.fstName = fstName;
+                this.lstName = lstName;
+                this.age = age;
+                this.department = department;
+                this.salary = salary;
+            }
+            celebrateBirthday() {
+                this.age += 1;
+                alert(`поздравляем c днём рождения, ${this.fstName}!`);
+            }
+        }
+        // let field1 = document.getElementById('fstNameInput').value
+        // let field2 = document.getElementById('lstNameInput').value
+        // let field3 = document.getElementById('ageInput').value
+        // let field4 = document.getElementById('departmentInput').value
+        // let field5 = document.getElementById('salaryInput').value
+        // let People = 0
+
+        // function addPerson(fstName, lstName, age, department, salary) {
+        //     // People += 1
+        //     let Person = new Person(fstName, lstName, age, department, salary)
+        //     console.log(Person)
+        // }
+        // document.getElementById('addPerson').onclick(addPerson(field1, field2, field3, field4, field5))
+
+        // function createCard()
+
+        let user1 = new Person("svvf", "sfasf", 16, "refas", 578)
+        console.log(user1)
+        let user2 = new Person("svvf", "sfasf", 54, "refas", 4534)
+        console.log(user2)
+        let user3 = new Person("svvf", "sfasf", 24, "refas", 453543)
+        console.log(user3)
+        let user4 = new Person("svvf", "sfasf", 45, "refas", 435)
+        console.log(user4)
+        let user5 = new Person("svvf", "sfasf", 55, "refas", 4353)
+        console.log(user5)
+
+
+
+
+
+
+
+
+
+
+
+        // addPerson = document.getElementById('addPerson')
+
+        // addPerson.addEventListener("click", addPerson(), false)
+
+
+
+    </script>
+
+</body>
+
+</html>
