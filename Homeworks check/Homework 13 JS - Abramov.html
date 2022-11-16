@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    //Задание на наследование классов____________________________
+    class Person {
+        constructor(name, surname, gender, age) {
+            this.name = name;
+            this.surname = surname;
+            this.gender = gender;
+            this.age = age;
+        }
+        renamePerson(newName) {
+            this.name = newName;
+        }
+    }
+    class Admin extends Person {
+        constructor(name, surname, gender, age, role, id) {
+            super(name, surname, gender, age);
+            this.role = role;
+            this.id = id;
+        }
+    }
+    class Client extends Person {
+        constructor(name, surname, gender, age, sale) {
+            super(name, surname, gender, age);
+            this.sale = sale;
+        }
+    }
+
+    let client1 = new Client('alex', 'york', 'male', '22', '5');
+    console.log(client1);
+    client1.renamePerson('hans');
+    console.log(client1);
+</script>
+
+<body>
+
+</body>
+
+</html>
