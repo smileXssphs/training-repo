@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><a href="./index.html">Назад на главную страницу</a></li>
+        </ul>
+    </div>
+    <h1 style="font-size: 3rem; margin-bottom: 3rem;">Это корзина</h1>
+    <div id="container_bascet" style="width: 80%; margin: 0 auto">
+    </div>
+
+
+    <script>
+        let quantity = 0
+        let sum = 0
+        function render() {
+            container_bascet.innerHTML = ""
+            let string = localStorage.result
+            let arr = JSON.parse(string)
+            for (let i = 0; i < arr.length; i = i + 1) {
+                let obj = arr[i];
+                sum = sum + parseInt(obj.price)
+                quantity += 1
+                container_bascet.innerHTML += `${obj.name} ------- ${obj.price} рублей <br><br>`
+            }
+            container_bascet.innerHTML += `Всего товаров ${quantity} , на сумму ${sum} рублей`
+            container_bascet.innerHTML += '<button id="finishPurchase">Завершить покупку</button>'
+        }
+        render()
+
+        finishPurchase.onclick = (e) => {
+            alert(`С вашей карты снято ${sum} рублей`)
+        }
+
+
+        // container_bascet.onclick = (e) => {
+        //     if (e.target.classList.contains("deleteProduct")) {
+        //         let result = localStorage.result
+        //         let result2 = JSON.parse(result)
+        //         for (const key in result2) {
+        //             if (key === e.target.dataset.name) {
+        //                 delete result2[key]
+        //                 localStorage.setItem('result', JSON.stringify(result2));
+        //                 render()
+        //                 break
+        //             }
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
