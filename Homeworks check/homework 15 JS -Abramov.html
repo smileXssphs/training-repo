@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let id = 5
+        // function getRnMCharacter(id) {
+        //     if (id === 0) {
+        //         return Promise.reject('wrong id');
+        //     }
+        //     fetch(`https://rickandmortyapi.com/api/character/${id}`)
+        //         .then(result => result.json())
+        //     return result
+        // }
+
+        // let data = getRnMCharacter(1)
+
+        async function getRnMCharacter(id) {
+            if (id === 0) {
+                throw 'wrong id';
+            }
+            let response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+            let data = await response.json()
+            return data;
+        }
+        let result = getRnMCharacter(id)
+        // for (const key in result) {
+        //     let element = result[key];
+        //     console.log(element)
+        // }
+        console.log(result)
+    </script>
+</body>
+
+</html>
