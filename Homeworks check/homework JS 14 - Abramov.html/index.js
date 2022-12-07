@@ -16,13 +16,18 @@ function createCard(linkToImg, price, name) {
     span.innerHTML = name
     card.appendChild(span)
 
-    let button = document.createElement('button')
-    button.classList.add('purchaseButton')
-    button.innerHTML = 'Купить'
-    button.dataset.price = price
-    button.dataset.name = name
-    button.dataset.quantity = ""
-    card.appendChild(button)
+    let button2 = document.createElement('button')
+    button2.classList.add('deleteButton')
+    button2.innerHTML = 'Удалить'
+
+
+    let button1 = document.createElement('button')
+    button1.classList.add('purchaseButton')
+    button1.innerHTML = 'Купить'
+    button1.dataset.price = price
+    button1.dataset.name = name
+    button1.dataset.quantity = ""
+    card.appendChild(button1)
 
     parent.appendChild(card)
 }

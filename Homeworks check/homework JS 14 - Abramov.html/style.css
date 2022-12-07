@@ -70,6 +70,8 @@ a {
     font-weight: 500;
 }
 
+.deleteButton {}
+
 .itemDescription {
     margin-top: 5px;
     margin-bottom: 3px;
